@@ -1,9 +1,10 @@
 import polars as pl
+from time import time
 
 df = pl.read_csv("data/01_data.txt")
 
 
-def get_solution(df=df):
+def get_part_1(df=df):
     one_sorted = df.select("one").sort("one")
     two_sorted = df.select("two").sort("two")
 
@@ -31,7 +32,7 @@ def get_part_2(df=df):
 
 
 def main():
-    print("Part 1:", get_solution())
+    print("Part 1:", get_part_1())
     print("Part 2:", get_part_2())
 
 
