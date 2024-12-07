@@ -1,3 +1,5 @@
+# Slightly modified from https://www.reddit.com/r/adventofcode/comments/1h7tovg/comment/m0o44m5/
+
 input = "data/06_data.txt"
 
 
