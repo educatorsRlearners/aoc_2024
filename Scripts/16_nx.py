@@ -7,7 +7,7 @@ input_file = "data/16_data.txt"
 with open(input_file) as f:
     ls = f.read().strip().split("\n")
 
-fourdir = (1, -1, 1j, -1j)
+four_dir = (1, -1, 1j, -1j)
 
 G = nx.DiGraph()
 
@@ -20,7 +20,7 @@ for i, l in enumerate(ls):
             start = (z, 1j)
         if x == "E":
             end = z
-        for dz in fourdir:
+        for dz in four_dir:
             G.add_node((z, dz))
 
 for z, dz in G.nodes:
@@ -29,7 +29,7 @@ for z, dz in G.nodes:
     for rot in -1j, 1j:
         G.add_edge((z, dz), (z, dz * rot), weight=1000)
 
-for dz in fourdir:
+for dz in four_dir:
     G.add_edge((end, dz), "end", weight=0)
 
 # Part 1
@@ -44,6 +44,7 @@ for path in nx.all_shortest_paths(G, start, "end", weight="weight"):
     # Iterate over each position in the path, excluding the last node
     for z, _ in path[:-1]:
         unique_positions.add(z)
+
 
 # Print the number of unique positions
 print(len(unique_positions))
