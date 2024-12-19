@@ -1,3 +1,4 @@
+# Solution minimally adapted from: https://www.reddit.com/r/adventofcode/comments/1hhlb8g/comment/m2s6gnj/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
 import re
 
 from functools import cache
